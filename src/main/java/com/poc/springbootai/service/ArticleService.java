@@ -22,10 +22,11 @@ public class ArticleService {
     }
 
     public Article generateAndSaveArticle(String seedText) throws JsonProcessingException {
-        String generatedContent = chatGptService.generateResponse(seedText);
+        //String generatedContent = chatGptService.generateTitle(seedText);
         String generatedTitle = "Generated Title: " + seedText.substring(0, Math.min(10, seedText.length())) + "...";
-        Article article = new Article(generatedTitle, generatedContent);
-        return articleRepository.save(article);
+        //Article article = new Article(generatedTitle, generatedContent);
+        //return articleRepository.save(article);
+        return new Article();
     }
 
     public List<Article> getAllArticles() {
